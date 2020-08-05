@@ -1,0 +1,14 @@
+<h1>To Do</h1>
+<hr />
+<h2> Create Task</h2>
+<form>
+    <p>Task:</p> 
+    {{ form.title }} <br />
+    <button type="button">Create Task</button>
+</form>
+<h2>Tasks</h2>
+{% for task in tasks %}
+    <div>
+        <p> {{ task }}</p>
+    </div>
+{% endfor %}
