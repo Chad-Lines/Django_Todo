@@ -27,3 +27,10 @@ def updateTask(request, pk):
         return redirect('/')
 
     return render(request, 'tasks/update_task.html', {'form': form})
+
+def deleteTask(request, pk):
+    task = Task.objects.get(id=pk)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('/')
+    return render(request, 'tasks/delete.html', {'task': task})
